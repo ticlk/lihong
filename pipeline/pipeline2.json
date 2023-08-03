@@ -7,7 +7,7 @@
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
-					"timeout": "7.00:00:00",
+					"timeout": "0.12:00:00",
 					"retry": 0,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
@@ -16,20 +16,13 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
+						"type": "AzureMySqlSource",
+						"queryTimeout": "02:00:00"
 					},
 					"sink": {
 						"type": "DelimitedTextSink",
 						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
+							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
 							"type": "DelimitedTextWriteSettings",
@@ -49,18 +42,20 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "DelimitedText1",
+						"referenceName": "AzureMySqlTable1",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DelimitedText2",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
-		"annotations": []
-	}
+		"annotations": [],
+		"lastPublishTime": "2023-05-04T00:24:13Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
 }

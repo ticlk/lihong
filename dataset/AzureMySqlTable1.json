@@ -1,0 +1,27 @@
+{
+	"name": "AzureMySqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureMySql1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "fname",
+				"precision": 200,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"tableName": "`table0302`"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

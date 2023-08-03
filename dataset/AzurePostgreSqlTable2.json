@@ -1,0 +1,113 @@
+{
+	"name": "AzurePostgreSqlTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzurePostgreSql1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzurePostgreSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "col01",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col02",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col03",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col04",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col05",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col06",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col07",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col08",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col09",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col10",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col11",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col12",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col13",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col14",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col15",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col16",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col17",
+				"precision": 20,
+				"scale": 0
+			},
+			{
+				"name": "col18",
+				"precision": 20,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "public",
+			"table": "table052403"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

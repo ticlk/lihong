@@ -1,0 +1,110 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AzurePostgreSqlTable1",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AzurePostgreSqlTable2",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          id as integer,",
+				"          col01 as string,",
+				"          col02 as string,",
+				"          col03 as string,",
+				"          col04 as string,",
+				"          col05 as string,",
+				"          col06 as string,",
+				"          col07 as string,",
+				"          col08 as string,",
+				"          col09 as string,",
+				"          col10 as string,",
+				"          col11 as string,",
+				"          col12 as string,",
+				"          col13 as string,",
+				"          col14 as string,",
+				"          col15 as string,",
+				"          col16 as string,",
+				"          col17 as string,",
+				"          col18 as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     isolationLevel: 'READ_UNCOMMITTED',",
+				"     query: 'SELECT id, col01, col02, col03, col04, col05, col06, col07, col08, col09, col10, col11, col12, col13, col14, col15, col16, col17, col18\\n     FROM public.table0516',",
+				"     format: 'query',",
+				"     partitionPredicates: ['1=1'],",
+				"     partitionBy('external', 1)) ~> source1",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          id as string,",
+				"          col01 as string,",
+				"          col02 as string,",
+				"          col03 as string,",
+				"          col04 as string,",
+				"          col05 as string,",
+				"          col06 as string,",
+				"          col07 as string,",
+				"          col08 as string,",
+				"          col09 as string,",
+				"          col10 as string,",
+				"          col11 as string,",
+				"          col12 as string,",
+				"          col13 as string,",
+				"          col14 as string,",
+				"          col15 as string,",
+				"          col16 as string,",
+				"          col17 as string,",
+				"          col18 as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     recreate:true,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          col01,",
+				"          col02,",
+				"          col03,",
+				"          col04,",
+				"          col05,",
+				"          col06,",
+				"          col07,",
+				"          col08,",
+				"          col09,",
+				"          col10,",
+				"          col11,",
+				"          col12,",
+				"          col13,",
+				"          col14,",
+				"          col15,",
+				"          col16,",
+				"          col17,",
+				"          col18",
+				"     ),",
+				"     preCommands: [],",
+				"     postCommands: []) ~> sink1"
+			]
+		}
+	}
+}

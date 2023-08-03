@@ -1,0 +1,66 @@
+{
+	"name": "pipeline5",
+	"properties": {
+		"activities": [
+			{
+				"name": "accessToken",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://login.partner.microsoftonline.cn/b388b808-0ec9-4a09-a414-a7cbbd8b7e9b/oauth2/token",
+					"method": "POST",
+					"headers": {
+						"Content-Type": "application/x-www-form-urlencoded"
+					},
+					"body": "grant_type=client_credentials&client_id=08715978-21cf-4596-b843-302dee41e8fd&client_secret=nzd8.3L9L9BQ15_OYMqJB~8KMyx26z5D.J&resource=https://management.core.chinacloudapi.cn"
+				}
+			},
+			{
+				"name": "StorageAccountUpdate",
+				"type": "WebActivity",
+				"dependsOn": [
+					{
+						"activity": "accessToken",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://management.chinacloudapi.cn/subscriptions/1f2ffc2d-4f6a-4fea-b142-31ae337d6aad/resourceGroups/dashboards/providers/Microsoft.Storage/storageAccounts/storagegen20227?api-version=2021-09-01",
+					"method": "PATCH",
+					"headers": {
+						"Authorization": {
+							"value": "@{concat('Bearer ', activity('accessToken').output.access_token)}",
+							"type": "Expression"
+						}
+					},
+					"body": {
+						"properties": {
+							"isSftpEnabled": "true"
+						}
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2023-05-16T01:31:03Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

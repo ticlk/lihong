@@ -1,22 +1,18 @@
 {
-	"name": "DelimitedText1",
+	"name": "Binary2",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "DelimitedText",
+		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileSystem": "test"
-			},
-			"columnDelimiter": ",",
-			"escapeChar": "\\",
-			"quoteChar": "\""
-		},
-		"schema": []
+				"fileSystem": "adf"
+			}
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

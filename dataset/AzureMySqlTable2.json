@@ -1,0 +1,42 @@
+{
+	"name": "AzureMySqlTable2",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureMySql2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [
+			{
+				"name": "ProfileID",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "SessionStart",
+				"precision": 100,
+				"scale": 0
+			},
+			{
+				"name": "Duration",
+				"precision": 10,
+				"scale": 0
+			},
+			{
+				"name": "SrcIPAddress",
+				"precision": 100,
+				"scale": 0
+			},
+			{
+				"name": "GameType",
+				"precision": 100,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"tableName": "`table0509`"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

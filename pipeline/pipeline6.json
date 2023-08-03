@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "pipeline6",
 	"properties": {
 		"activities": [
 			{
@@ -27,14 +27,8 @@
 				}
 			}
 		],
-		"parameters": {
-			"para1": {
-				"type": "string",
-				"defaultValue": "value1"
-			}
-		},
 		"annotations": [],
-		"lastPublishTime": "2023-05-09T05:29:31Z"
+		"lastPublishTime": "2023-05-17T02:29:35Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }
